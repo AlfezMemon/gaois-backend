@@ -1,0 +1,44 @@
+{
+  "name": "amira-danielli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TSWTeam/amira-danielli.git"
+  },
+  "keywords": [
+    "Amira"
+  ],
+  "author": "TSW Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TSWTeam/amira-danielli/issues"
+  },
+  "homepage": "https://github.com/TSWTeam/amira-danielli#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "handlebars": "^4.7.8",
+    "joi": "^17.11.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.3.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.7",
+    "nodemon": "^2.0.22",
+    "path": "^0.12.7",
+    "url": "^0.11.3",
+    "winston": "^3.9.0",
+    "winston-daily-rotate-file": "^4.7.1",
+    "xlsx": "^0.18.5"
+  }
+}
