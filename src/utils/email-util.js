@@ -58,7 +58,7 @@ export function sendEmailtoStudent(recipientEmail, recipientName) {
         }
     });
 
-    readHTMLFile(__dirname + '../../../mail-template.html', function (err, html) {
+        readHTMLFile('./mail-template.html', function (err, html) {
         if (err) {
             console.log('error reading file', err);
             return;
