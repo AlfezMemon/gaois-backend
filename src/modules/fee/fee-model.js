@@ -6,7 +6,7 @@ const fees = new Schema({
     student_id : {
         type: ObjectId
     },  
-    monthly_fee: {
+    monthly_fees: {
         type: Number
     },
     received_amount: {

@@ -27,10 +27,10 @@ export default class FeeController {
             remaining_fees = Math.abs(carried_forward);
             carried_forward = 0;
         }
-        
+
         logger.info("Carried forward = " + carried_forward);
         logger.info("Remaining = " + remaining_fees);
-
+        data.monthly_fees = monthly_fees; 
         let response = await CommonService.create(req.model, data);
         let updateEntry = await CommonService.update('student', { _id: previousFeeData._id }, { carried_forward: carried_forward, remaining_fees: remaining_fees }, false, false);
 

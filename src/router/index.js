@@ -30,7 +30,6 @@ router.post('/user/login', UserValidation.userLoginValidator, UserController.log
 router.get('/student', StudentUserValidation.studentMidllerware, CommonController.getMultiple);
 router.post('/students', StudentUserValidation.studentMidllerware, CommonController.getMultiple);
 router.post('/student', StudentUserValidation.studentCreateValidation, StudentUserController.studentCreateHandler);
-router.post('/student/', StudentUserValidation.studentCreateValidation, StudentUserController.studentCreateHandler);
 router.get('/student/:id', StudentUserValidation.studentMidllerware, CommonController.getById);
 router.post('/student/status', StudentUserValidation.studentMidllerware, StudentUserController.updateStatus);
 
