@@ -1,5 +1,5 @@
 {
-  "name": "amira-danielli",
+  "name": "gaios",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TSWTeam/amira-danielli.git"
+    "url": "git+https://github.com/AlfezMemon/gaois-backend.git"
   },
   "keywords": [
     "Amira"
@@ -17,9 +17,9 @@
   "author": "TSW Team",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TSWTeam/amira-danielli/issues"
+    "url": "https://github.com/AlfezMemon/gaois-backend/issues"
   },
-  "homepage": "https://github.com/TSWTeam/amira-danielli#readme",
+  "homepage": "https://github.com/AlfezMemon/gaois-backend#readme",
   "dependencies": {
     "bootstrap": "^5.3.2",
     "cors": "^2.8.5",

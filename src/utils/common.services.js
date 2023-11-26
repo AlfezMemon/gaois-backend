@@ -98,8 +98,6 @@ export default class CommonService {
             }
             else {
                 logger.debug(`Query Type Received : Multi`)
-                console.log(constraint);
-                console.log(query);
                 if(constraint.pagination){
                     data = await mongoose.model(collectionName).find(query).skip(constraint.skip).limit(constraint.limit).sort(constraint.sort).exec();
                     totalPage = await mongoose.model(collectionName).countDocuments(query);
