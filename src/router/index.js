@@ -12,6 +12,7 @@ import StudentUserValidation from "../modules/student/student.validation.js";
 import StudentUserController from "../modules/student/student.controller.js";
 import CommonController from '../utils/common.controller.js';
 import FeeMiddleware from "../modules/fee/fee-middleware.js";
+import FeeController from "../modules/fee/fee-controller.js";
 const upload = multer({ dest: 'uploads/' });
 
 const app = express();
@@ -35,11 +36,7 @@ router.post('/student/status', StudentUserValidation.studentMidllerware, Student
 
 
 /* fee records */
-router.post('/fee', FeeMiddleware.common, CommonController.create);
+router.post('/fee', FeeMiddleware.common, FeeController.addFeeEntry);
 router.post('/fee-records', FeeMiddleware.common, CommonController.getMultiple);
-router.get('/fee/:id', FeeMiddleware.common, CommonController.getById);
-router.put('/fee/:id', FeeMiddleware.common, CommonController.updateById);
-
-    
 
 export default router;
