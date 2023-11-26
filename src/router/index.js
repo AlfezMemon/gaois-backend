@@ -27,19 +27,19 @@ router.post('/user/login', UserValidation.userLoginValidator, UserController.log
  * Student page
  */
 router.get('/student', StudentUserValidation.studentMidllerware, CommonController.getMultiple);
+router.post('/students', StudentUserValidation.studentMidllerware, CommonController.getMultiple);
 router.post('/student', StudentUserValidation.studentCreateValidation, StudentUserController.studentCreateHandler);
+router.post('/student/', StudentUserValidation.studentCreateValidation, StudentUserController.studentCreateHandler);
 router.get('/student/:id', StudentUserValidation.studentMidllerware, CommonController.getById);
+router.post('/student/status', StudentUserValidation.studentMidllerware, StudentUserController.updateStatus);
+
 
 /* fee records */
 router.post('/fee', FeeMiddleware.common, CommonController.create);
 router.post('/fee-records', FeeMiddleware.common, CommonController.getMultiple);
 router.get('/fee/:id', FeeMiddleware.common, CommonController.getById);
 router.put('/fee/:id', FeeMiddleware.common, CommonController.updateById);
-// router.put(
-//     '/student/:id',
-//     StudentUserValidation.userValidator,
-//     StudentUserController.update_user_handler
-//   );
-  
+
+    
 
 export default router;

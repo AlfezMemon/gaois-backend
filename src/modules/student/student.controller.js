@@ -17,17 +17,13 @@ import { sendEmail, sendEmailtoStudent } from "../../utils/email-util.js";
 
 export default class StudentUserController {
     /**
- * User registration 
- */
+     * User registration 
+    */
     static async studentCreateHandler(req, res) {
         let { email, password, student_name, student_last_name, student_phone, student_wp_phone, student_dob, father_name, class_type, address, course } = req.body;
-        // const pass = crypto.createHash('sha256', "amira board").update(password).digest('hex');
-        // console.log(pass);
         let userData = {
             email: email,
-            // password:password,
             student_name: student_name,
-            // student_last_name: student_last_name,
             father_name: father_name,
             student_phone: student_phone,
             student_wp_phone: student_wp_phone,
@@ -35,9 +31,6 @@ export default class StudentUserController {
             class_type: class_type,
             course: course,
             address: address,
-            // email: email,
-            // password: pass,
-            // username: username
         }
         console.log(userData);
         let response = await CommonService.create('student', userData);
@@ -86,45 +79,19 @@ export default class StudentUserController {
     /**
      * Get user profile by id  
      */
-    static async get_profile_handler(req, res) {
-
+    static async updateStatus(req, res) {
+        let { _id, status } = req.body;
+        let updatableData = {
+            status: status
+        }
+        if (status === "confirm") {
+            let maxId = 1;
+            maxId = await CommonService.getDataByQuery('student', {}, { limit: 1, sort: { student_id: -1 } }, false);
+            updatableData.student_id = maxId.data[0].student_id + 1;
+        }
+        let response = await CommonService.update('student', { _id: _id }, updatableData);
+        res.status(200).json(response);
     }
-    /**
-     * Update user 
-     * @param {*} userData 
-     */
-    // static async update_user_handler(req, res) {
-    //     // static async updateUserHandler(req, res) {
-    //     let id = new Types.ObjectId(req.params.id);
-    //     let { email, status, student_name, student_last_name, student_phone, student_wp_phone, student_dob, father_name, class_type, address, course } = req.body;
-
-    //     // let { name, profileImg, company, mobile, userType } = req.body;
-    //     let userData = {
-    //         email: email,
-    //         // password:password,
-    //         student_name: student_name,
-    //         // student_last_name: student_last_name,
-    //         father_name: father_name,
-    //         student_phone: student_phone,
-    //         student_wp_phone: student_wp_phone,
-    //         student_dob: student_dob,
-    //         class_type: class_type,
-    //         course: course,
-    //         address: address,
-    //         status:status,
-    //     }
-    //     let response = await userService.updateUser(id, userData);
-
-    //     if (response.status == constants.statusSuccess) {
-    //         res.status(200).json(response);
-    //     }
-    //     else if (response.status === constants.statusFail) {
-    //         res.status(400).json(response);
-    //     }
-    //     else {
-    //         return res.status(500).json(response)
-    //     }
-    // }
 }
 
 // module.exports = UserController;
