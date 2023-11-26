@@ -16,7 +16,6 @@ import { sendEmail, sendEmailtoStudent } from "../../utils/email-util.js";
 
 
 export default class StudentUserController {
-
     /**
  * User registration 
  */

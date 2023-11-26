@@ -13,6 +13,19 @@ const joiOptions = {
 };
 
 export default class StudentUserValidation {
+    
+    /**
+     * Middleware that adds meta data in request body which are specific to the module
+     * This is must when you want to use common controller. 
+     * @param {*} req 
+     * @param {*} res 
+     * @param {*} next 
+     */
+    static async studentMidllerware(req, res, next) {
+        req.model = 'student'; 
+        next(); 
+    }
+    
     static async studentCreateValidation(req, res, next) {
         // Required line in case common controller is used.
         req.model = 'student';

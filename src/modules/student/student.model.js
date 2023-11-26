@@ -9,6 +9,10 @@ const student = new Schema({
         required: true,
  
     },
+    student_id : {
+        type: String,
+        default: "-"
+    },
     student_phone: {
         type: Number,
         required: true,
