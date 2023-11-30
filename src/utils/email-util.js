@@ -10,14 +10,14 @@ export function sendEmail(formData) {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'ghauseazamonlineislamicstudies@gmail.com', // your email address
-            pass: 'hletduhxtahlrvib' // your email password or application-specific password
+            user: 'gaoistudies@gmail.com', // your email address
+            pass: 'zxqucmgpelonbseq' // your email password or application-specific password
         }
     });
 
     const mailOptions = {
         from: 'Ghause Azam Online Islamic Studies <ghauseazamonlineislamicstudies@gmail.com>', // sender address
-        to: 'ghauseazamonlineislamicstudies@gmail.com', // recipient address
+        to: 'ghauseazamonlineislamicstudies@gmail.com,gaoistudies@gmail.com ', // recipient address
         subject: 'New Form Submission',
         text: `New form submission : ${JSON.stringify(formData, null, 2)}`
     };
@@ -53,12 +53,12 @@ export function sendEmailtoStudent(recipientEmail, recipientName) {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'ghauseazamonlineislamicstudies@gmail.com', // your email address
-            pass: 'hletduhxtahlrvib' // your email password or application-specific password
+            user: 'gaoistudies@gmail.com', // your email address
+            pass: 'zxqucmgpelonbseq' // your email password or application-specific password
         }
     });
 
-        readHTMLFile('./mail-template.html', function (err, html) {
+    readHTMLFile('./mail-template.html', function (err, html) {
         if (err) {
             console.log('error reading file', err);
             return;
@@ -70,7 +70,7 @@ export function sendEmailtoStudent(recipientEmail, recipientName) {
 
         var htmlToSend = template(replacements);
         const mailOptions = {
-            from: 'Ghause Azam Online Islamic Studies <ghauseazamonlineislamicstudies@gmail.com>', // sender address
+            from: 'Ghause Azam Online Islamic Studies <gaoistudies@gmail.com>', // sender address
             to: recipientEmail, // recipient address
             subject: 'New Form Submission',
             html: htmlToSend
