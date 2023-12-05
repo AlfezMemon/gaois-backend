@@ -30,7 +30,7 @@ const student = new Schema({
     },
     gender: {
         type: String,
-        required: true,
+        // required: true,
     },
     address: {
         type: String,
