@@ -20,11 +20,14 @@ export default class StudentUserController {
      * User registration 
     */
     static async studentCreateHandler(req, res) {
-        let { email, password, student_name, student_last_name, student_phone, student_wp_phone, student_dob, father_name, class_type, address, course } = req.body;
+        let { email, gender, class_time, student_name, specific_course, student_phone, student_wp_phone, student_dob, father_name, class_type, address, course } = req.body;
         let userData = {
             email: email,
             student_name: student_name,
             father_name: father_name,
+            gender: gender,
+            specific_course: specific_course,
+            class_time: class_time,
             student_phone: student_phone,
             student_wp_phone: student_wp_phone,
             student_dob: student_dob,

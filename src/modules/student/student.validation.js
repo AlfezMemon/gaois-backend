@@ -34,13 +34,15 @@ export default class StudentUserValidation {
             email: Joi.string().email({ tlds: { allow: true } }).required(),
             // password:Joi.string().required(),
             student_name: Joi.string().optional(),
-            // student_last_name: Joi.string().optional(),
+            gender: Joi.string().optional(),
             father_name: Joi.string().optional(),
             student_phone: Joi.number().optional(),
             student_wp_phone: Joi.number().optional(),
             student_dob: Joi.string().optional(),
             class_type: Joi.string().optional(),
             course: Joi.string().optional(),
+            specific_course: Joi.string().optional(),
+            class_time: Joi.string().optional(),
             address: Joi.string().optional(),
         });
 

@@ -1,14 +1,14 @@
 // import { boolean, date } from "joi";
 // import { string } from "joi";
 import mongoose from "mongoose";
-let Schema = mongoose.Schema; 
+let Schema = mongoose.Schema;
 
 const student = new Schema({
     email: {
         type: String,
         required: true,
     },
-    student_id : {
+    student_id: {
         type: Number,
         default: 0
     },
@@ -28,13 +28,17 @@ const student = new Schema({
         type: String,
         required: true,
     },
+    gender: {
+        type: String,
+        required: true,
+    },
     address: {
         type: String,
         required: true
     },
     class_type: {
         type: String,
-        required: true 
+        required: true
     },
     student_dob: {
         type: String,
@@ -44,19 +48,26 @@ const student = new Schema({
         type: String,
         required: true,
     },
+    specific_course: {
+        type: String,
+    },
+    class_time: {
+        type: String,
+        // required: true,
+    },
     status: {
         type: String,
         default: "pending",
-        enum: ["pending","cancel","confirm","hold", "deactive", "completed"]
-    }, 
-    monthly_fees: {
-        type: Number, 
-        default : 0
+        enum: ["pending", "cancel", "confirm", "hold", "deactive", "completed"]
     },
-    carried_forward : {
+    monthly_fees: {
         type: Number,
         default: 0
-    }, 
+    },
+    carried_forward: {
+        type: Number,
+        default: 0
+    },
     remaining_fees: {
         type: Number,
         default: 0
