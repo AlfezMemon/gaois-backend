@@ -11,6 +11,7 @@ import crypto from "crypto";
 import userModel from "./student.model.js";
 // import userService from "./student-service.js"
 import { sendEmail, sendEmailtoStudent } from "../../utils/email-util.js";
+import CommonController from '../../utils/common.controller.js';
 // const crypto = require("crypto");
 // const sha256Hasher = crypto.createHmac("sha256", "zoho secrets");
 
@@ -79,11 +80,36 @@ export default class StudentUserController {
         }
 
     }
+    // static async updateStudent(req, res) {
+    //     let id = req.params.id;
+    //     let { email, gender, class_time, student_name, specific_course, student_phone, student_wp_phone, student_dob, father_name, class_type, address, course } = req.body;
+    //     let userData = {
+    //         email: email,
+    //         student_name: student_name,
+    //         father_name: father_name,
+    //         gender: gender,
+    //         specific_course: specific_course,
+    //         class_time: class_time,
+    //         student_phone: student_phone,
+    //         student_wp_phone: student_wp_phone,
+    //         student_dob: student_dob,
+    //         class_type: class_type,
+    //         course: course,
+    //         address: address,
+    //     }
+    //     console.log(userData);
+    //     // if (userData) {
+    //     let response = await CommonController.updateById('student', userData, false);
+    //     res.status(200).json(response);
+    //     // }
+    // }
+
     /**
-     * Get user profile by id  
+     * Update Status Student profile by id  
      */
-    static async updateStatus(req, res) {
-        let { _id, status } = req.body;
+    static async updateStatusbyID(req, res) {
+        let _id = req.params.id;
+        let {status } = req.body;
         let updatableData = {
             status: status
         }

@@ -31,11 +31,13 @@ router.get('/student', StudentUserValidation.studentMidllerware, CommonControlle
 router.post('/students', StudentUserValidation.studentMidllerware, CommonController.getMultiple);
 router.post('/student', StudentUserValidation.studentCreateValidation, StudentUserController.studentCreateHandler);
 router.get('/student/:id', StudentUserValidation.studentMidllerware, CommonController.getById);
-router.post('/student/status', StudentUserValidation.studentMidllerware, StudentUserController.updateStatus);
+router.post('/student/:id', StudentUserValidation.studentMidllerware, CommonController.updateById);
+
+router.post('/student/status/:id', StudentUserValidation.studentMidllerware, StudentUserController.updateStatusbyID);
 
 
 /* fee records */
-router.post('/fee', FeeMiddleware.common, FeeController.addFeeEntry);
+router.post('/fee/:id', FeeMiddleware.common, FeeController.addFeeEntry);
 router.post('/fee-records', FeeMiddleware.common, CommonController.getMultiple);
 
 export default router;
