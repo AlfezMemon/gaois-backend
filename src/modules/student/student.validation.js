@@ -42,7 +42,7 @@ export default class StudentUserValidation {
             class_type: Joi.string().optional(),
             course: Joi.string().optional(),
             specific_course: Joi.string().optional(),
-            class_time: Joi.string().optional(),
+            class_time: Joi.string().optional().allow(''),
             address: Joi.string().optional(),
         });
 
