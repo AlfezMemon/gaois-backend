@@ -45,4 +45,6 @@ export default class FeeController {
 
         res.status(200).json(response);
     }
+
+    
 }

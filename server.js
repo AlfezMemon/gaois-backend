@@ -1,4 +1,4 @@
-import dotenv, { config } from "dotenv";
+import dotenv from "dotenv";
 import http from "http";
 import cors from "cors";
 import express from "express";

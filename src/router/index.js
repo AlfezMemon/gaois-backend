@@ -32,6 +32,7 @@ router.post('/students', StudentUserValidation.studentMidllerware, CommonControl
 router.post('/student', StudentUserValidation.studentCreateValidation, StudentUserController.studentCreateHandler);
 router.get('/student/:id', StudentUserValidation.studentMidllerware, CommonController.getById);
 router.post('/student/:id', StudentUserValidation.studentMidllerware, CommonController.updateById);
+router.post('/student/delete/:id', StudentUserValidation.studentMidllerware, CommonController.deleteById);
 
 router.post('/student/status/:id', StudentUserValidation.studentMidllerware, StudentUserController.updateStatusbyID);
 
@@ -39,5 +40,9 @@ router.post('/student/status/:id', StudentUserValidation.studentMidllerware, Stu
 /* fee records */
 router.post('/fee/:id', FeeMiddleware.common, FeeController.addFeeEntry);
 router.post('/fee-records', FeeMiddleware.common, CommonController.getMultiple);
+router.post('/fee-records', FeeMiddleware.common, CommonController.getById);
+router.post('/fee/:id', FeeMiddleware.common, CommonController.updateById);
+router.post('/fee/delete/:id', FeeMiddleware.common, CommonController.deleteById);
+
 
 export default router;
