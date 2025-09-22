@@ -12,7 +12,8 @@ const user = new Schema({
         required: true
     },
     username: {
-        type: Number
+        // type: Number
+        type: String
     },
     status:{
         type:String,
