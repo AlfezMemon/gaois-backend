@@ -40,4 +40,8 @@ router.post('/student/status/:id', StudentUserValidation.studentMidllerware, Stu
 router.post('/fee/:id', FeeMiddleware.common, FeeController.addFeeEntry);
 router.post('/fee-records', FeeMiddleware.common, CommonController.getMultiple);
 
+router.get('/health', (req, res) => {
+    res.status(200).send('Server is running!');
+});
+
 export default router;
